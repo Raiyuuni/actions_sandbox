@@ -17,4 +17,7 @@ jobs:
           python-version: "3.x" # latest Python 3 release
 
       - name: run script
-        run: python test.py
+        id: script
+        run: | 
+          python test.py
+          echo "test" >> $GITHUB_STEP_SUMMARY
