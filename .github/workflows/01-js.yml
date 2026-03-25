@@ -11,10 +11,10 @@ jobs:
       - name: download repository
         uses: actions/checkout@v6
 
-      - name: python setup
+      - name: js setup
         uses: actions/setup-node@v6
         with:
-          node-version: "latest"
+          node-version: ">=24.x"
 
       - name: run script
         id: script
