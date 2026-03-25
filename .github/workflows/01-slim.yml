@@ -1,0 +1,23 @@
+name: Python Test
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  example-job:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: download repository
+        uses: actions/checkout@v6
+
+      - name: python setup
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x" # latest Python 3 release
+
+      - name: run script
+        id: script
+        run: | 
+          python test.py
+          echo "test" >> $GITHUB_STEP_SUMMARY
