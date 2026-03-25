@@ -1,4 +1,4 @@
-name: Python Test (Charlie)
+name: Python Test Charlie
 
 on:
   workflow_dispatch: # Manual trigger
