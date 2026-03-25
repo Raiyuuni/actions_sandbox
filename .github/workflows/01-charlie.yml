@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: download repository
-      - uses: actions/checkout@v6
+      - name: download file
+        uses: actions/checkout@v6
         with:
           sparse-checkout: |
             test.py
