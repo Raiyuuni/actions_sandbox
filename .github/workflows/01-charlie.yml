@@ -1,0 +1,27 @@
+name: Python Test (Charlie)
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download repository
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            test.py
+          sparse-checkout-cone-mode: false
+
+      - name: python setup
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x" # latest Python 3 release
+
+      - name: run script
+        id: script
+        run: | 
+          python test.py
+          echo "test" >> $GITHUB_STEP_SUMMARY
